@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SQLPsdem: Proxy-Based Detection and Prevention of Second-Order SQL Injections
 
 ## 📋 Project Overview
@@ -168,3 +169,7 @@ This project is for educational purposes only.
 ## ⚠️ Disclaimer
 
 The vulnerable web application is intentionally insecure for testing purposes. **DO NOT deploy to production environments.**
+=======
+# sqlpsdem-project
+SQLPsdem: Proxy-Based Detection and Prevention of Second-Order SQL Injections
+>>>>>>> 3c6b61d1cba6df7515a414bbda53fe15aed15f7c
