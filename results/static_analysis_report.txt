@@ -1,0 +1,35 @@
+
+================================================================================
+STATIC ANALYSIS REPORT
+================================================================================
+Total PHP files scanned: 3
+Total SQL statements found: 6
+
+SQL STATEMENTS FOUND:
+================================================================================
+
+1. FILE: C:\xampp\htdocs\vulnerable_app\comments.php:12
+   QUERY: INSERT INTO comments (user_id, comment_text) VALUES (
+   INJECTION POINTS: []
+
+2. FILE: C:\xampp\htdocs\vulnerable_app\comments.php:13
+   QUERY: INSERT_QUERY: 
+   INJECTION POINTS: []
+
+3. FILE: C:\xampp\htdocs\vulnerable_app\comments.php:27
+   QUERY: SELECT u.username, c.comment_text FROM comments c JOIN users u ON c.user_id = u.id WHERE u.id = 
+   INJECTION POINTS: []
+
+4. FILE: C:\xampp\htdocs\vulnerable_app\comments.php:29
+   QUERY: SELECT_COMMENTS: 
+   INJECTION POINTS: []
+
+5. FILE: C:\xampp\htdocs\vulnerable_app\login.php:14
+   QUERY: SELECT * FROM users WHERE username='
+   INJECTION POINTS: []
+
+6. FILE: C:\xampp\htdocs\vulnerable_app\search.php:10
+   QUERY: SELECT * FROM products WHERE product_name LIKE '%
+   INJECTION POINTS: []
+
+================================================================================

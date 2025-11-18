@@ -1,0 +1,162 @@
+Log created: 2025-11-16 11:42:07.893418
+
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-16 12:03:23
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' OR '1'='1
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-16 12:03:23
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' OR 1=1 --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-16 12:03:23
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          admin' --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-16 12:03:23
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' UNION SELECT 1,2,3,4,5 --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-16 12:03:23
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' UNION SELECT NULL,NULL,NULL,NULL,NULL --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 01:04:43
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' OR '1'='1
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 01:04:43
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' OR 1=1 --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 01:04:43
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          admin' --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 01:04:43
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' UNION SELECT 1,2,3,4,5 --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 01:04:43
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' UNION SELECT NULL,NULL,NULL,NULL,NULL --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 10:12:42
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' OR '1'='1
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 10:12:42
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' OR 1=1 --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 10:12:42
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          admin' --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 10:12:42
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' UNION SELECT 1,2,3,4,5 --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 10:12:42
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' UNION SELECT NULL,NULL,NULL,NULL,NULL --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 10:13:32
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' OR '1'='1
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 10:13:32
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' OR 1=1 --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 10:13:32
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          admin' --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 10:13:32
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' UNION SELECT 1,2,3,4,5 --
+Detected:         YES
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ATTACK ATTEMPT LOG
+Timestamp:        2025-11-18 10:13:32
+Endpoint:         http://localhost/vulnerable_app/login.php
+Payload:          ' UNION SELECT NULL,NULL,NULL,NULL,NULL --
+Detected:         YES
+--------------------------------------------------------------------------------

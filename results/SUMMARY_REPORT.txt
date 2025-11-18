@@ -1,0 +1,16 @@
+
+================================================================================
+SQLPSDEM DETECTION REPORT - SUMMARY
+================================================================================
+Generated: 2025-11-18 10:13:32
+
+VULNERABILITIES DETECTED: 0
+ATTACK ATTEMPTS LOGGED: 5
+
+VULNERABILITY BREAKDOWN:
+
+================================================================================
+Detailed logs available in:
+  - C:\Users\ASUS\Desktop\MS1\ADBM\Micro Project\sqlpsdem_project\results\vulnerabilities_found.txt
+  - C:\Users\ASUS\Desktop\MS1\ADBM\Micro Project\sqlpsdem_project\results\attack_logs.txt
+================================================================================
