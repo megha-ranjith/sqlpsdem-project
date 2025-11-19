@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SQLPsdem: Proxy-Based Detection and Prevention of Second-Order SQL Injections
 
 ## 📋 Project Overview
