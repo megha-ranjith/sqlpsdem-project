@@ -122,6 +122,7 @@ session_start();
         <div class="nav-links">
             <a href="search.php">Search Products</a> | 
             <a href="comments.php">Add Comment</a>
+            <a href="proxy_dashboard.php">Proxy Dashboard</a>
         </div>
     </div>
 </body>

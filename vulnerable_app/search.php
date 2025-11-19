@@ -1,20 +1,18 @@
 <?php
 include 'config.php';
-$results = array();
-$search_term = '';
+
+$results = [];
+$search = '';
 
 if(isset($_GET['search'])) {
-    $search_term = $_GET['search'];
+    $search = $_GET['search'];
     
-    // VULNERABLE: Direct string concatenation
-    $sql = "SELECT * FROM products WHERE product_name LIKE '%" . $search_term . "%' OR description LIKE '%" . $search_term . "%'";
+    // VULNERABLE - Direct injection
+    $query = "SELECT * FROM products WHERE product_name LIKE '%{$search}%'";
     
-    error_log("SEARCH_QUERY: " . $sql);
+    $result = $conn->query($query);
     
-    $result = $conn->query($sql);
-    if($result === false) {
-        error_log("SQL ERROR: " . $conn->error . " | Query: " . $sql);
-    } else {
+    if($result) {
         while($row = $result->fetch_assoc()) {
             $results[] = $row;
         }
@@ -24,102 +22,46 @@ if(isset($_GET['search'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Product Search</title>
+    <title>Search Products</title>
     <style>
-        body { 
-            font-family: Arial; 
-            padding: 20px; 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        .search-box { 
-            margin-bottom: 20px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        input { 
-            padding: 10px; 
-            width: 300px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        button { 
-            padding: 10px 20px; 
-            background: #667eea; 
-            color: white; 
-            border: none; 
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background: #764ba2;
-        }
-        table { 
-            border-collapse: collapse; 
-            width: 100%; 
-            max-width: 600px;
-            margin: 20px auto;
-            background: white;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        th, td { 
-            border: 1px solid #ddd; 
-            padding: 12px; 
-            text-align: left; 
-        }
-        th { 
-            background: #667eea; 
-            color: white; 
-        }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            text-align: center;
-        }
-        a, a:visited {
-            color: white;
-            text-decoration: none;
-        }
+        body { font-family: Arial; padding: 30px; background: #f5f5f5; }
+        .box { background: white; padding: 30px; max-width: 800px; margin: 0 auto; border-radius: 10px; }
+        input { padding: 10px; width: 400px; font-size: 16px; }
+        button { padding: 10px 20px; background: #667eea; color: white; border: none; cursor: pointer; }
+        table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #667eea; color: white; }
     </style>
 </head>
 <body>
-    <div style="max-width: 600px; margin: 0 auto;">
-        <h1 style="color: white; text-align: center;">Product Search</h1>
+    <div class="box">
+        <h1>Product Search</h1>
         
-        <div class="search-box">
-            <form method="GET">
-                <input type="text" name="search" value="<?php echo htmlspecialchars($search_term); ?>" placeholder="Search products...">
-                <button type="submit">Search</button>
-            </form>
-        </div>
-
-        <?php if(count($results) > 0): ?>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th>Description</th>
-                </tr>
-                <?php foreach($results as $product): ?>
-                    <tr>
-                        <td><?php echo $product['id']; ?></td>
-                        <td><?php echo htmlspecialchars($product['product_name']); ?></td>
-                        <td>$<?php echo number_format($product['price'], 2); ?></td>
-                        <td><?php echo $product['stock']; ?></td>
-                        <td><?php echo htmlspecialchars($product['description']); ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
-        <?php elseif(isset($_GET['search'])): ?>
-            <p style="color: white; text-align: center;">No products found.</p>
+        <p><strong>Try:</strong> <code>laptop</code> or <code>' OR 1=1--</code></p>
+        
+        <form method="GET">
+            <input type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search...">
+            <button>Search</button>
+        </form>
+        
+        <?php if(isset($_GET['search'])): ?>
+            <h3>Results: <?php echo count($results); ?> found</h3>
+            
+            <?php if(count($results) > 0): ?>
+                <table>
+                    <tr><th>ID</th><th>Name</th><th>Price</th><th>Stock</th></tr>
+                    <?php foreach($results as $p): ?>
+                        <tr>
+                            <td><?php echo $p['id']; ?></td>
+                            <td><?php echo $p['product_name']; ?></td>
+                            <td>$<?php echo $p['price']; ?></td>
+                            <td><?php echo $p['stock']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            <?php else: ?>
+                <p>No products found.</p>
+            <?php endif; ?>
         <?php endif; ?>
-
-        <p style="text-align: center;"><a href="index.php" style="background: #667eea; padding: 10px 20px; border-radius: 5px;">Back to Home</a></p>
-    </div>
-</body>
-</html>
+        
+        <p style="margin-top: 30px
