@@ -1,6 +1,6 @@
 # SQLPsdem: Proxy-Based Detection and Prevention of Second-Order SQL Injections
 
-## 📋 Project Overview
+## 📋 Project Overview 
 
 This project implements a comprehensive SQL injection detection and prevention system based on proxy-based monitoring, static analysis, and dynamic execution testing.
 ---
