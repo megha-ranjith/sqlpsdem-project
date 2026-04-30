@@ -3,7 +3,7 @@
 ## 📋 Project Overview 
 
 This project implements a comprehensive SQL injection detection and prevention system based on proxy-based monitoring, static analysis, and dynamic execution testing.
----
+--- 
 
 ## 🎯 Features
 
